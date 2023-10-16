@@ -4,9 +4,14 @@ document.body.appendChild(quoteContainer);
 
 fetch('https://programming-quotesapi.vercel.app/api/random')
   .then(response => response.json())
-  .then(quote => {
+  .then(data => {
     const quoteText = document.createElement('p');
-    quoteText.textContent = quote.en;
+    quoteText.textContent = data.quote;
+
+    const authorText = document.createElement('p');
+    authorText.textContent = `- ${data.author}`;
+
     quoteContainer.appendChild(quoteText);
+    quoteContainer.appendChild(authorText);
   })
   .catch(error => console.error(error));
