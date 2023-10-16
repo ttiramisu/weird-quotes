@@ -1,8 +1,0 @@
-.flex {
-  align-items: center;
-  justify-content: center;
-}
-
-.blockquote-footer::before {
-  content: none;
-}
