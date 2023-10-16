@@ -1,17 +1,10 @@
-const quoteContainer = document.createElement('div');
-quoteContainer.classList.add('flex');
-document.body.appendChild(quoteContainer);
-
 fetch('https://programming-quotesapi.vercel.app/api/random')
   .then(response => response.json())
   .then(data => {
-    const quoteText = document.createElement('p');
+    const quoteText = document.getElementById('quoteText');
     quoteText.textContent = data.quote;
 
-    const authorText = document.createElement('p');
+    const authorText = document.getElementById('quoteAuthor');
     authorText.textContent = `- ${data.author}`;
-
-    quoteContainer.appendChild(quoteText);
-    quoteContainer.appendChild(authorText);
   })
   .catch(error => console.error(error));
