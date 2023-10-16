@@ -130,4 +130,3 @@ const today = function() {
     })
     .catch(error => console.error(error));
 };
-}
