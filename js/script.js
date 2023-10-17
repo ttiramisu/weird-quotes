@@ -160,7 +160,7 @@ const randomDate = function () {
       displayWiki.target = '_blank';
       displayWiki.href = wikipedia;
 
-      const last5Events = data.events; //.slice(-5);
+      const last5Events = data.events.slice(-5);
       console.log(last5Events);
 
       last5Events.forEach((event, index) => {
